@@ -1,0 +1,65 @@
+.gm-input {
+  border: solid 1px #ccc !important;
+  background: #fff !important;
+  margin-bottom: 0 !important;
+}
+.gm-input[disabled] {
+  background: #eee !important;
+}
+.gm-radio-wrap {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-around;
+}
+.gm-has-error {
+  background: #ffebe8 !important;
+  border: solid 1px #c00 !important;
+}
+.gm-input-button-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.gm-input-button-wrap .gm-input-button {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.gm-mypage-add-button-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.gm-mypage-add-button-wrap .gm-mypage-add-button {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.gm-input-datepicker-wrap {
+  display: flex;
+  gap: 10px;
+}
+.gm-input-datepicker-wrap input {
+  width: 150px !important;
+}
+.gm-input-datepicker-wrap img {
+  height: 40px;
+  width: 40px;
+}
+.gm-checkbox-group-wrap {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.gm-checkbox-group-wrap label {
+  width: 30%;
+  display: flex;
+  gap: 5px;
+} /*# sourceMappingURL=front.css.map */
+
+
