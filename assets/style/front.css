@@ -62,4 +62,9 @@
   gap: 5px;
 } /*# sourceMappingURL=front.css.map */
 
+.gm-container {
+  display: flex;
+  padding: 30px;
+}
+
 

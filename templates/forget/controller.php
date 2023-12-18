@@ -35,6 +35,9 @@ class Gm_Forget_Controller extends Abstract_Template_Controller
         $this->render();
     }
 
+    function gdpr_delay_script_execution( $ms ) {
+        return 5000; // 5000 ms = 5 seconds.
+    }
     private function forget($params)
     {
         // -----------------
@@ -52,7 +55,7 @@ class Gm_Forget_Controller extends Abstract_Template_Controller
         if (!empty($errors)) {
             $this->set_input_params($params);
             $this->set_common_error('IDが違います。'); // エラー内容を見せないために強制表示
-            echo("IDが違います。1");
+            echo("<script>alert(\"IDが違います。\")</script>");
             return;
         }
 
@@ -64,29 +67,41 @@ class Gm_Forget_Controller extends Abstract_Template_Controller
         );
         if (empty($records)) {
             $this->set_common_error('IDが違います。');
-            echo("IDが違います。2");
+            echo("<script>alert(\"IDが違います。\")</script>");
             return;
         }
 
-        echo($params['user_id']);
         // -----------------
         // セッション情報保持
         // ----------------
-        $to = 'info＠ar-garage.com';
+
+
+        $to = 'info@ar-garage.com';
 
         $subject = 'Hello,  I forgot my password';
 
-        $message = 'This is my email ';
+        $message = 'This is my email';
 
         $message .= $params['user_id'];
         
-        mail($to, $subject, $message);
+        $success = wp_mail($to, $subject, $message);
+
+
+        if ($success) {
+            
+            echo("<script>confirm(\"あなたのEメール情報が正確に配信されました。もし二日間返事が来ない場合は申し訳ありませんが、再度お問い合わせいただくと幸いです。\")</script>");
+            header('Location: /login');
+        } else {
+            header('Location: /forget');
+            echo("<script>confirm(\"申し訳ありませんが、メールが正確に配信されていません。もう一度お試しください。\")</script>");
+        };
+
+        // -----------------
+        // 画面遷移
+        // -----------------
+        // 画面遷移
         
-        // -----------------
-        // 画面遷移
-        // -----------------
-        // 画面遷移
-        header('Location: /login');
+
         exit();
     }
 
