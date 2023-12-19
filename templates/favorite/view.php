@@ -3,13 +3,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 ?>
-<style>
-    
 
-  
-  
-  
-</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
 <div class="">
