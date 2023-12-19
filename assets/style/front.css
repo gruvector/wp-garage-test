@@ -70,15 +70,15 @@
 
 .gm-container {
   display: flex;
-  padding: 30px;
+  justify-content: space-between;
+
 }
 .gm-card {
   display: flex;
   flex-direction: column;
-  width: 30%;
-  border: 1px solid black;
+  border: 1px solid lightgray;
   border-radius: 10px;
-
+  box-shadow: 3px 5px #ddd;
 }
 
 .gm-card-button {
@@ -88,4 +88,33 @@
   padding: 15px;
 }
 
+.gm-card-img {
+  
+  height: auto;
+}
+.gm-card-img > img {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom: 1px solid lightgray;
+}
 
+.gm-card-info{
+  padding: 10px;
+}
+
+.testimonials-slider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 350px;
+}
+
+.testimonial {
+  width: calc(30%);
+  margin-bottom: 40px;
+  margin-left: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  max-height: 800px;
+}
